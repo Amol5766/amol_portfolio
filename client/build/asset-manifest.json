@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e2bd722a.css",
+    "main.js": "/static/js/main.8626c699.js",
+    "static/js/488.eff9e766.chunk.js": "/static/js/488.eff9e766.chunk.js",
+    "static/media/img.png": "/static/media/img.7c4c5be9c5193c113243.png",
+    "static/media/amol.png": "/static/media/amol.a518ca0af165d9f8eb4e.png",
+    "static/media/pexels-brunoscramgnon-585759.jpg": "/static/media/pexels-brunoscramgnon-585759.c37b4fb0da59f9fbd1f3.jpg",
+    "static/media/dark-bg.jpg": "/static/media/dark-bg.c0102f17b5564422168c.jpg",
+    "static/media/Agri chatbot.png": "/static/media/Agri chatbot.479fd99ce1c6627a139b.png",
+    "static/media/face recognition.png": "/static/media/face recognition.62579770e5859ec4e83d.png",
+    "static/media/salary prediction.png": "/static/media/salary prediction.382dddaac8170d4f7bee.png",
+    "static/media/home.svg": "/static/media/home.e7fd0478451b8d72ff9b93b1ea475b66.svg",
+    "static/media/about.svg": "/static/media/about.f72572fba574fd084e40b1769fc428e2.svg",
+    "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
+    "index.html": "/index.html",
+    "main.e2bd722a.css.map": "/static/css/main.e2bd722a.css.map",
+    "main.8626c699.js.map": "/static/js/main.8626c699.js.map",
+    "488.eff9e766.chunk.js.map": "/static/js/488.eff9e766.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2bd722a.css",
+    "static/js/main.8626c699.js"
+  ]
+}

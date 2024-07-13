@@ -1,0 +1,77 @@
+.contact-container {
+  display: flex;
+  max-width: 100%;
+  margin: 5vh;
+  padding: 5vh;
+  height: 100vh; /* Ensure it takes the full viewport height */
+}
+
+.planet-container {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  display: fixed;
+  margin: 5vh;
+  padding: 5vh;
+  align-items: center;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #2E3B30; /* Matte light greenish black background color */
+  color: #fff; /* White text color */
+}
+
+button {
+  background-color: #8a1de3;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 10px; /* Slightly rounded corners */
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+button:hover::before {
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 0%;
+}
+
+button:hover {
+  background-color: #512fa8; /* Slightly darker shade of purple for hover effect */
+  box-shadow: 0 0 15px rgba(29, 177, 227, 0.6), 0 0 20px  rgba(29, 177, 227, 0.6); /* Neon glow effect */
+  transform: scale(1.90); /* Slightly enlarges the button on hover */
+}
+
+button:active {
+  transform: scale(0.50); /* Shrinks the button when active/clicked */
+}
+

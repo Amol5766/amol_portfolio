@@ -1,0 +1,100 @@
+.project-card-wrapper {
+    position: relative;
+    margin: 20px;
+  }
+  
+  .project-card-view {
+    position: relative;
+    border: 10px solid #a24dd3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(12, 9, 14, 0.975);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card-view:hover {
+    transform: translateY(10px);
+    box-shadow:0 6px 20px rgba(190, 10, 255, 0.975);
+  }
+  
+  /* The hover effect for the card affects the circles */
+  .project-card-wrapper:hover .circle {
+    transform: scale(1.1); /* Scale up the circles */
+    box-shadow:0 6px 20px rgba(190, 10, 255, 0.975);
+  }
+  .project-card-view .card-title {
+    color: #a24dd3; /* Default color if not set through props */
+    font-size: 1.45rem; /* Adjust size as needed */
+    font-style: italic;
+    font-family: fantasy;
+  }
+  .project-card-view:hover .card-title {
+    text-shadow:0 6px 20px rgba(190, 10, 255, 0.975);
+  }
+  
+
+  /* Circle styling */
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: transparent; /* Transparent background for hollow effect */
+    border: 10px solid #a24dd3; /* Border to create the circle */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the exterior of the circle */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for scale effect */
+  }
+  
+  /* Shadow effect for the circle when hovered */
+  .project-card-wrapper:hover .circle {
+    box-shadow: 0 6px 20px rgba(190, 10, 255, 0.975); /* Increased shadow on hover */
+  }
+  
+  /* Hollow center of the circle */
+  .circle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px; /* Size to create the hollow effect */
+    height: 60px;
+    background-color: #ed2c2c; /* Background color to match the card */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  /* Positioning the circles */
+  .circle-top {
+    top: -50px;
+    left: -50px;
+  }
+  
+  .circle-bottom {
+    bottom: -50px;
+    right: -50px;
+  }
+  
+  /* Corner styling */
+  .corner {
+    position: absolute;
+    width: 54px; /* Half the size of the circle */
+    height: 54px; /* Half the size of the circle */
+    background-color: #a24dd3; /* Color to match the background */
+    z-index: 1;
+  }
+  
+  .corner-top-left {
+    top: -4px;
+    left: -4px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 100%;
+  }
+  
+  .corner-bottom-right {
+    bottom: -4px;
+    right: -4px;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 100%;
+  }
+  
