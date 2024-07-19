@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import Planet from './Planet';
 import './ContactForm.css'; // Import your custom styles for the form
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    to_name: 'Recipient', // Replace with the actual recipient name if needed
+    from_name: '',
     email: '',
     message: ''
   });
+
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -17,23 +21,23 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/contacts/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+
+    const serviceID = 'service_z4dddel';
+    const templateID = 'template_dx2utqk'; // Correct template ID
+    const userID = 'q3jhdGwcum9rzK8Xz';
+
+    emailjs.send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        console.log('Email sent successfully:', response.status, response.text);
+        setFormData({ to_name: 'Recipient', from_name: '', email: '', message: '' });
+        setResponseMessage('Message sent successfully!');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        setResponseMessage('Failed to send message. Please try again later.');
       });
-      const data = await response.json();
-      console.log('Form submission response:', data);
-      // Optionally, reset form data after successful submission
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    }
   };
 
   return (
@@ -43,13 +47,13 @@ const ContactForm = () => {
         <h1 className="title">Contact.</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name" className="purple"><strong>Name :</strong></label>
+            <label htmlFor="from_name" className="purple"><strong>Name :</strong></label>
             <input
               type="text"
-              id="name"
-              name="name"
+              id="from_name"
+              name="from_name"
               placeholder="What's your name?"
-              value={formData.name}
+              value={formData.from_name}
               onChange={handleInputChange}
               required
             />
@@ -80,9 +84,9 @@ const ContactForm = () => {
           </div>
           <button type="submit"><strong>Send</strong></button>
         </form>
-        <div id="responseMessage"></div>
       </div>
       <div className="planet-container">
+        <div id="responseMessage">{responseMessage}</div> {/* Response message */}
         <Planet />
       </div>
     </div>
